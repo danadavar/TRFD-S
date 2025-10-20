@@ -11,7 +11,7 @@ where $f:R^n \to R$, and $lb$ and $ub$ are vectors. TRFD-S only relies on the fu
 
 All publications using TRFD-S must cite:
 
-D. Davar and G. N. Grapiglia: A Finite-Difference Trust-Region Method for Smooth Optimization
+D. Davar and G. N. Grapiglia: A Finite-Difference Trust-Region Method for Convexly Constrained Smooth Optimization
 
 ## How to use
 
