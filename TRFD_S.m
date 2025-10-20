@@ -11,8 +11,8 @@ function [x_min, f_min, nf, stop, H] = TRFD_S (x0, Ffun, nfmax, lb, ub)
 %
 % by applying the method proposed in the paper
 %
-% D. Davar, G. N. Grapiglia: A trust-region method based on finite-
-% difference gradients for smooth optimization with convex constraints
+% D. Davar, G. N. Grapiglia: A Finite-Difference Trust-Region Method
+% for Convexly Constrained Smooth Optimization
 %
 % INPUT:
 %  
@@ -238,3 +238,4 @@ disp(f_min);
 % than nfmax evaluations (the maximum number being nfmax + n).
 % Therefore, this could allow f_min to be lower than the last entry of H.
 % Nevertheless, we still provide H to allow the users to plot data profiles in a fair way.
+
