@@ -52,6 +52,10 @@ Ffun = @(x) 100*(x(2) - x(1)^2)^2 + (1 - x(1))^2
 
   - [x_min, f_min, nf, stop, H] = TRFD_S ([0.5; 0.5], Ffun, 300, [0.1; 0.1], [20; 20])
 
+## Remark
+
+The file TRSgep.m is part of the Manopt toolbox (https://github.com/NicolasBoumal/manopt).
+
 ## Contact
 
 Dânâ Davar,  Geovani Nunes Grapiglia <br>
