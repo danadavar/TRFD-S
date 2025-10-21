@@ -1,8 +1,8 @@
 function [g, H, x_min, f_min] = grad_approx (x, f, tau, n, Ffun, lb, ub, x_min, f_min)
 
 % Procedure described in Sections 3 and 4 in the paper
-% D. Davar and G. N. Grapiglia: A trust-region method based on finite-difference
-% gradients for smooth optimization with convex constraints
+% D. Davar and G. N. Grapiglia: A Finite-Difference Trust-Region Method for Convexly
+% Constrained Smooth Optimization, arXiv preprint https://arxiv.org/abs/2510.17366, 2025.
 
 H = zeros(n,1);
 I = eye(n);
@@ -30,3 +30,4 @@ for j = 1:n
         f_min = fz;
     end
 end
+
