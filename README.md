@@ -1,4 +1,4 @@
-# TRFD-S: Trust-Region method based on Finite Differences for Smooth problems
+# TRFD-S: Trust-Region method based on Finite Differences for Smooth optimization
 ## Purpose
 
 TRFD-S solves smooth problems of the form
@@ -11,7 +11,7 @@ where $f:R^n \to R$, and $lb$ and $ub$ are vectors. TRFD-S only relies on the fu
 
 All publications using TRFD-S must cite:
 
-D. Davar and G. N. Grapiglia: A Finite-Difference Trust-Region Method for Convexly Constrained Smooth Optimization
+D. Davar and G. N. Grapiglia: A Finite-Difference Trust-Region Method for Convexly Constrained Smooth Optimization, arXiv preprint https://arxiv.org/abs/2510.17366, 2025.
 
 ## How to use
 
