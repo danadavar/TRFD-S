@@ -17,20 +17,6 @@ else
     return
 end
 
-if ~isvector(lb) || ~isnumeric(lb) || ~isvector(ub) || ~isnumeric(ub)      % check lb and ub are vectors of numbers
-    fprintf("\n Error: lb and ub must be vectors \n");
-    [x, Ffun, n, lb, ub] = deal([]);
-    check = 0;
-    return
-end
-
-if size(lb, 1) ~= size(ub, 1) || size(lb, 1) ~= size(x0, 1)
-    fprintf("\n Error: x0, lb and ub must have the same dimensions \n");   % check lb and ub have the same dimensions
-    [x, Ffun, n, lb, ub] = deal([]);
-    check = 0;
-    return
-end
-
 if isempty(lb) && isempty(ub)                                              % set lb, ub and x
     lb = -Inf*ones(n,1);
     ub = Inf*ones(n,1);
