@@ -30,7 +30,7 @@ for j = 1:100*n*n
         x_dyk_new = min(max(y_dyk + q, lb), ub);                                % project on the box
         q = y_dyk + q - x_dyk_new;
         
-        if norm (x_dyk_new - x_dyk, 2) <= 10^(-8)
+        if norm (x_dyk_new - x_dyk, 2) <= 10^(-4)
             break
         else
             x_dyk = x_dyk_new;
