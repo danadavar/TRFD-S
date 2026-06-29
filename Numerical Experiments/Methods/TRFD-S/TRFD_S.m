@@ -45,7 +45,7 @@ function [x_min, f_min, nf, stop, H] = TRFD_S (x0, Ffun, nfmax, lb, ub)
 % ICTEAM Institute, UCLouvain, Belgium
 % dana.davar@uclouvain.be, geovani.grapiglia@uclouvain.be
 %
-% October 2025
+% June 2026
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -116,12 +116,21 @@ while nf < nfmax && Delta > Delta_tol
             if flag_y == 1 && flag_first_success > 0
                 y = g - g_save;                                             % compute y_{k} = g_{k} - g_{k-1}
                 a = s'*y;                                                   % compute the scalar product s_{k}*y_{k}
-             
-                if abs(a) > 0
-                    z = B*s;
-                    S1 = (y*y')/a;
-                    S2 = (z*z')/(s'*B*s);
-                    B = B + S1 - S2;                                        % safeguarded BFGS update of the matrix B  
+
+                if isequal(lb, -Inf*ones(n,1)) && isequal(ub, Inf*ones(n,1))
+                    if abs(a) > 0
+                        z = B*s;
+                        S1 = (y*y')/a;
+                        S2 = (z*z')/(s'*B*s);
+                        B = B + S1 - S2;                                        % BFGS update of the matrix B in the unconstrained case  
+                    end
+                else
+                    if a > 0
+                        z = B*s;
+                        S1 = (y*y')/a;
+                        S2 = (z*z')/(s'*B*s);
+                        B = B + S1 - S2;                                        % BFGS update of the matrix B in the box-constrained case
+                    end
                 end
             end
             
@@ -239,5 +248,3 @@ disp(f_min);
 % than nfmax evaluations (the maximum number being nfmax + n).
 % Therefore, this could allow f_min to be lower than the last entry of H.
 % Nevertheless, we still provide H to allow the users to plot data profiles in a fair way.
-
-
